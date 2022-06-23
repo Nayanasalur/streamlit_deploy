@@ -146,7 +146,7 @@ Heloo! Welcome to the ** Project**
 #@Technocolab
 """)
 #############################################dataset and raw data
-my_expander6 = st.beta_expander("Get fundamentals by choosing Stocks(SNP 500)", expanded=False)
+my_expander6 = st.expander("Get fundamentals by choosing Stocks(SNP 500)", expanded=False)
 with my_expander6:
     # https://raw.githubusercontent.com/teobeeguan/market_profile/main/Datasets/SP500.csv
 
@@ -168,7 +168,7 @@ with my_expander6:
         st.title('Company Profile')
         st.subheader(info['longName'])
 
-        col01, col02, col03 = st.beta_columns(3)
+        col01, col02, col03 = st.columns(3)
 
         # sector = st.markdown('** Sector **: ' + info['sector'])
         sector = info['sector']
@@ -185,7 +185,7 @@ with my_expander6:
         col03.header("website")
         col03.write(website)
 
-        col04, col05, col06 = st.beta_columns(3)
+        col04, col05, col06 = st.columns(3)
 
         market = info['market']
         col04.header("Market")
@@ -263,7 +263,7 @@ with my_expander6:
 
 def show_info(df):
     # df = pd.read_csv("test_002.csv")
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = st.columns(2)
 
     original = df.open[0]
     col1.header("Open Price")
@@ -280,7 +280,7 @@ def show_info(df):
 
     st.write("last day return")
     x = 0
-    col4, col5, col6, col7 = st.beta_columns(4)
+    col4, col5, col6, col7 = st.columns(4)
     return1 = (df.open[x] - df.close[0]) / (df.open[x]) * 100
     fo = "{:.2f}".format(return1)
     col4.header("Return % last day")
@@ -302,7 +302,7 @@ def show_info(df):
     col7.write(fo4)
 
 
-my_expander7 = st.beta_expander("Basic Info ", expanded=False)
+my_expander7 = st.expander("Basic Info ", expanded=False)
 with my_expander7:
     st.header('Select Dataset to view info')
     df = pd.DataFrame({
@@ -330,7 +330,7 @@ with my_expander7:
         # data.columns = map(str.lower, data.columns)
         show_info(df2)
 
-my_expander2 = st.beta_expander("Plotting Visualization", expanded=False)
+my_expander2 = st.expander("Plotting Visualization", expanded=False)
 with my_expander2:
 
 
@@ -357,7 +357,7 @@ with my_expander2:
 
 
 
-my_expander3 = st.beta_expander("Visualization with Indicators", expanded=False)
+my_expander3 = st.expander("Visualization with Indicators", expanded=False)
 with my_expander3:
     df = pd.read_csv("https://raw.githubusercontent.com/HARSHIT097/Streamlit_exp/main/stock_price_pred/test_002.csv")
 
@@ -431,7 +431,7 @@ with my_expander3:
 
         st.plotly_chart(figMA, use_container_width=True)
 
-my_expander4 = st.beta_expander("Visualization and Prediction(on specific dataset)", expanded=False)
+my_expander4 = st.expander("Visualization and Prediction(on specific dataset)", expanded=False)
 with my_expander4:
     st.header('Users Input Parameters')
     df = pd.DataFrame({
@@ -582,7 +582,7 @@ elif genre == 'Not Interested':
     st.write("No worry")
     st.write("Connect us through linkendin(link available in credit section)")
 
-ctn1 = st.beta_container()
+ctn1 = st.container()
 ctn1.subheader("**---------------------------------Caution!---------------------------------------**")
 ctn1.write("""
 This Project is used for only learning and development process. We don't encourage anyone 
